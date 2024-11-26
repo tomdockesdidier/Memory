@@ -7,7 +7,6 @@ body {
 
 #memory {
     margin-top:100px;
-
     display:grid;
     grid-template-columns: repeat(4,120px);
     gap:12px;
@@ -17,7 +16,6 @@ body {
 .card.revealed {
     width: 120px;
     height:120px;
-    border: 1px solid black;
     border-radius: 8px;
     position: relative;
     background-color: transparent;
@@ -28,7 +26,6 @@ body {
     width: 120px;
     height:120px;
     background-color: gray;
-    border: 1px solid black;
     border-radius: 8px;
     position: relative;
     .front {
@@ -51,6 +48,10 @@ body {
     }
 }
 
+.card:hover {
+    transform: scale(1.075);
+    transition-duration: 150ms;
+}
 
 .card.flipped {
     .front {
