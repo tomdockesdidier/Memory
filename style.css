@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+#memory {
+    margin-top:100px;
+
+    display:grid;
+    grid-template-columns: repeat(4,120px);
+    gap:12px;
+    justify-content: center;
+}
+
+.card.revealed {
+    width: 120px;
+    height:120px;
+    border: 1px solid black;
+    border-radius: 8px;
+    position: relative;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.card {
+    width: 120px;
+    height:120px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 8px;
+    position: relative;
+    .front {
+        background-color: gray;
+        background-image: url(images/miku_head.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .back {
+        transform: rotateY(180deg);
+    }
+    .front, .back {
+        width: 120px;
+        height: 120px;
+        position:absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        border-radius: 8px;
+    }
+}
+
+
+.card.flipped {
+    .front {
+        transform: rotateY(180deg);
+        transition-duration: 600ms;
+    }
+    .back {
+        transform: rotateY(0deg);
+        transition-duration: 600ms;
+    }
+}
+
+.win {
+    font-size: 100px;
+    text-align: center;
+}
